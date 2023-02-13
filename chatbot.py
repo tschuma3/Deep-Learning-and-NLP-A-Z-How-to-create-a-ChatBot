@@ -293,7 +293,7 @@ sequence_length = tf.placeholder_with_default(25, None, name='sequence_length')
 input_shape = tf.shape(inputs)
 
 #Getting the training and test predictions
-training_predictions, test_predictions = seq2seq_model(inputs, 
+training_predictions, test_predictions = seq2seq_model(tf.reverse(inputs, [-1]), 
                                                        targets, 
                                                        keep_prob, 
                                                        batch_size, 
